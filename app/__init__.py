@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 
 from flask import Flask, jsonify
 from flask_smorest import Api
@@ -20,6 +21,7 @@ migrate = Migrate()
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
+    load_dotenv()
 
     app.config["PROPAGATE_EXCEPTIONS"] = True
     app.config["API_TITLE"] = "Stores REST API"

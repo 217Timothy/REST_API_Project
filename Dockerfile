@@ -9,7 +9,6 @@ COPY . .
 
 ENV FLASK_APP=main
 ENV FLASK_RUN_HOST=0.0.0.0
-ENV FLASK_ENV=development
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
