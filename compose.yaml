@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    ports:
+      - 80:5000
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_APP=main
+      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_ENV=development
