@@ -6,4 +6,4 @@ echo "⏳ Running database migrations..."
 ./scripts/upgrade.sh
 
 echo "🚀 Starting Flask app..."
-exec flask run --host=0.0.0.0 --debug
+exec gunicorn -b 0.0.0.0:80 --timeout 120 "main:create_app()"
